@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<!--divinectorweb.com-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="banner">
+		<h1 class="animated bounceInLeft d-none d-md-block" style="animation-delay: 1s">Disaster Alleviation Foundation</h1>
+		<div class=".carousel-caption p">
+			<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">
+			Welcome to Disaster Alleviation Foundation, where compassion meets action. Our web application is a versatile platform that facilitates the 
+			spirit of giving by allowing people to donate a wide range of resources such as food, clothing, and money to those in need. In
+			addition to fostering generosity, Disaster Alleviation also empowers individuals to report disasters swiftly, aiding in rapid response efforts.
+		</p>
+		</div>
+	</div>
+	<div class="carousel slide" data-bs-ride="carousel" id="carouselExampleIndicators">
+		<div class="carousel-indicators">
+			<button aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#carouselExampleIndicators" type="button"></button> <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#carouselExampleIndicators" type="button"></button>
+		</div>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img alt="..." class="d-block w-100" src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+
+				<div class="carousel-caption">
+					<h1>Sign Up: Create your account to start donating or reporting disasters.</h1>
+
+					<h5 class="animated bounceInRight " style="animation-delay: 1s">💰 Donate Money</h5>
+					<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Every Cent counts! Your financial support can help organizations on the front lines of disaster relief and humanitarian efforts. Together, we can amplify our impact.</p>
+					<p class="animated bounceInRight" style="animation-delay: 3s">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Monetary_donations" asp-action="Index">Donate Money</a>
+					</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="..." class="d-block w-100" src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80">
+
+				<div class="carousel-caption">
+					<h1>Choose Your Cause: Select the cause you want to support or report a disaster in your vicinity.</h1>
+
+					<h5 class="animated bounceInRight" style="animation-delay: 1s">🧡 Donate Goods:</h5>
+					<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Your unused items can bring warmth and comfort to those less fortunate. Browse through our categories and make a meaningful donation today.</p>
+					<p class="animated bounceInRight" style="animation-delay: 3s">
+						<a class="nav-link text-dark" asp-area="" asp-controller="Goods_donations" asp-action="Index">Donate Goods</a>
+					</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img alt="..." class="d-block w-100" src="https://images.unsplash.com/photo-1519071711965-f84a1482a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80">
+
+				<div class="carousel-caption">
+					<h1>Make a Difference: Make your donation or report a disaster. Every contribution counts.</h1>
+
+					<h5 class="animated bounceInRight" style="animation-delay: 1s">🚨 Report Disasters</h5>
+					<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">Safety is our priority. If you witness or are affected by a disaster, use our platform to report it. Timely information can save lives.</p>
+					<p class="animated bounceInRight" style="animation-delay: 3s">
+						<a class="nav-link text-dark" asp-area="" asp-controller="disasters" asp-action="Index">Disaster</a>
+					</p>
+				</div>
+			</div>
+		</div><button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-prev-icon"></span> <span class="visually-hidden">Previous</span></button> <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleIndicators" type="button"><span aria-hidden="true" class="carousel-control-next-icon"></span> <span class="visually-hidden">Next</span></button>
+	</div>
+	<div class="banner">
+		<h1 class="animated bounceInRight d-none d-md-block" style="animation-delay: 1s"> Why Disaster Alleviation Foundation</h1>
+
+		<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">
+			Versatile Donations: At GiveHope, we believe in the power of diverse contributions. Whether you have surplus food,
+			gently used clothing, or wish to make a monetary donation, our platform makes it easy for you to extend your hand
+			to those who require assistance.</p>
+
+		<p class="animated bounceInRight d-none d-md-block" style="animation-delay: 3s">Impactful Giving: We ensure that your donations reach the right hands. Our robust network of trusted charities and 
+			community organizations ensures that your contributions make a real difference in the lives of those facing adversity.</p>
+
+		<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 4s">
+			Disaster Reporting: In times of crisis, quick response is crucial. GiveHope empowers users to report disasters in their area,
+			enabling faster response from authorities and relief organizations. Your timely reporting can help save lives and protect
+			communities.</p>
+			</div>
+
+			<!-- Gallery -->
+			<div class="banner_img">
+<div class="row">
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img
+      src="/css/img/di.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+				 style="width:auto;height:auto" />
+
+    <img
+      src="/css/img/don.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Wintry Mountain Landscape"
+				 style="width:350px;height:auto" />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <img
+      src="/css/img/food.jpg"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Mountains in the Clouds"
+				 style="width:auto;height:auto" />
+
+    <img
+      src="/css/img/disa.jpg"
+      class=" shadow-1-strong rounded mb-4"
+      alt="Boat on Calm Water"
+				 style="width:415px;height:250px" />
+  </div>
+
+  <div class="col-lg-4 mb-4 mb-lg-0">
+    <img
+      src="/css/img/im.jpg"
+      class=" shadow-1-strong rounded mb-4"
+      alt="Waves at Sea"
+				 style="width:415px;height:auto" />
+
+    <img
+      src="/css/img/fo.jpg"
+      class=" shadow-1-strong rounded mb-4"
+      alt="Yosemite National Park"
+				 style="width:415px;height:250px" />
+  </div>
+</div>
+</div>
+<!-- Gallery -->
+	<div class="banner_bg">
+		<h1 class="animated bounceInLeft d-none d-md-block" style="animation-delay: 1s"> Join Disaster Alleviation Foundation</h1>
+		<div class=".carousel-caption p">
+			<p class="animated bounceInLeft d-none d-md-block" style="animation-delay: 2s">
+				The Disaster Alleviation Foundation is not just a platform; it's a
+				community of individuals who believe in the power of kindness, compassion, and solidarity.
+				Together, we can make a difference in the lives of those in need and help build a more resilient world.
+			</p>
+		</div>
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js">
+	</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿@model IEnumerable<POE_PART1.Models.activeDisaster>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" asp-area="" asp-controller="MoneysAllocates" asp-action="Create">Allocate</a>
+
+    }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Disaster Status
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Distaster_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Start_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.End_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aid_Types)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @if (item.End_Date < DateTime.Now)
+                    {
+                        <p>Disaster is not active</p>
+                    }
+                    else
+                    {
+                        <p>Disaster is active</p>
+                        
+                    }
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.Distaster_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.End_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aid_Types)
+            </td>
+            <td>
+                    @if(User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Donar"))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Distaster_Name">Edit</a> 
+                            <a asp-action="Details" asp-route-id="@item.Distaster_Name">Details</a> 
+                            <a asp-action="Delete" asp-route-id="@item.Distaster_Name">Delete</a>
+                        }
+                    }
+                    
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
