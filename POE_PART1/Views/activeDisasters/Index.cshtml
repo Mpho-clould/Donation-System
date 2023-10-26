@@ -5,7 +5,16 @@
 }
 
 <h1>Index</h1>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Donar"))
+    {
+        <a class="btn btn-primary" asp-area="" asp-controller="activeDisasters" asp-action="Create">Create</a>
+       
 
+
+    }
+}
 
 @if (User.Identity.IsAuthenticated)
 {
@@ -94,6 +103,8 @@
     if (User.IsInRole("Admin"))
     {
         <a class="btn btn-primary" asp-area="" asp-controller="MoneysAllocates" asp-action="Index">View All Money Allocations</a>
+        <a class="btn btn-primary" asp-area="" asp-controller="MoneysAllocates" asp-action="Index">View All Money Allocations</a>
+
 
     }
 }
