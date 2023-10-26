@@ -3,6 +3,17 @@
 @{
     ViewData["Title"] = "Index";
 }
+<style>
+
+
+    .container {
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: 1150px 800px;
+        padding: 20px; /* Add padding for spacing inside the container */
+        border: 5px solid #ff7f00; /* Add a border for visualization */
+    }
+</style>
 
 <h1>Index</h1>
 
@@ -45,3 +56,7 @@
 }
     </tbody>
 </table>
+<div>
+    <a class="btn btn-primary" asp-area="" asp-controller="activeDisasters" asp-action="Index">Back to Active Disaster</a>
+
+</div>
