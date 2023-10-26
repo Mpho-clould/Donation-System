@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using POE_PART1.Data;
 using POE_PART1.Models;
+using POE_PART1.Purchase_calculations;
 
 namespace POE_PART1.Controllers
 {
@@ -18,15 +19,22 @@ namespace POE_PART1.Controllers
     {
         private readonly POE_PART1Context _context;
 
-        public activeDisastersController(POE_PART1Context context)
+        private readonly Calculate_purchase _Calculations;
+
+        public activeDisastersController(POE_PART1Context context, Calculate_purchase calculations)
         {
             _context = context;
+            _Calculations = calculations;
+
         }
 
         // GET: activeDisasters
         public async Task<IActionResult> Index()
+
         {
-              return _context.activeDisaster != null ? 
+            var totalAmount = await _Calculations.GetTotalAmount();
+            ViewBag.TotalAmount = totalAmount;
+            return _context.activeDisaster != null ? 
                           View(await _context.activeDisaster.ToListAsync()) :
                           Problem("Entity set 'POE_PART1Context.activeDisaster'  is null.");
         }

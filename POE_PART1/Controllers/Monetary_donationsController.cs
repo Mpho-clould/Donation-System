@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using POE_PART1.Data;
 using POE_PART1.Models;
+using POE_PART1.Purchase_calculations;
 
 namespace POE_PART1.Controllers
 {
@@ -14,14 +15,19 @@ namespace POE_PART1.Controllers
     {
         private readonly POE_PART1Context _context;
 
-        public Monetary_donationsController(POE_PART1Context context)
+        private readonly Calculate_purchase _Calculations;
+
+        public Monetary_donationsController(POE_PART1Context context, Calculate_purchase Calculations)
         {
             _context = context;
+            _Calculations = Calculations;
         }
 
         // GET: Monetary_donations
         public async Task<IActionResult> Index()
         {
+            var totalAmount = await _Calculations.GetTotalAmount();
+            ViewBag.TotalAmount = totalAmount;
               return _context.Monetary_donations != null ? 
                           View(await _context.Monetary_donations.ToListAsync()) :
                           Problem("Entity set 'POE_PART1Context.Monetary_donations'  is null.");

@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using POE_PART1.Data;
 using Microsoft.AspNetCore.Identity;
+using POE_PART1.Purchase_calculations;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<POE_PART1Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("POE_PART1Context") ?? throw new InvalidOperationException("Connection string 'POE_PART1Context' not found.")));
@@ -12,7 +14,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>().AddDefaultTokenProviders()
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddScoped<Calculate_purchase>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
