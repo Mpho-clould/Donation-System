@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using POE_PART1.Data;
 
@@ -11,9 +12,10 @@ using POE_PART1.Data;
 namespace POE_PART1.Migrations
 {
     [DbContext(typeof(POE_PART1Context))]
-    partial class POE_PART1ContextModelSnapshot : ModelSnapshot
+    [Migration("20231026171610_purchase")]
+    partial class purchase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
