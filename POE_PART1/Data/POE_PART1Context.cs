@@ -33,5 +33,7 @@ namespace POE_PART1.Data
 
         public DbSet<POE_PART1.Models.GoodsAllocation>? GoodsAllocation { get; set; }
 
+        public DbSet<POE_PART1.Models.Purchase>? Purchase { get; set; }
+
     }
 }
