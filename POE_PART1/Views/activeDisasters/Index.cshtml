@@ -12,8 +12,8 @@
     if (User.IsInRole("Admin"))
     {
         <a class="btn btn-primary" asp-area="" asp-controller="MoneysAllocates" asp-action="Create">Allocate Money</a>
-        <a class="btn btn-primary" asp-area="" asp-controller="GoodsAllocations" asp-action="Create">Allocate</a>
-        <a class="btn btn-primary" asp-area="" asp-controller="MoneysAllocates" asp-action="Create">Allocate</a>
+        <a class="btn btn-primary" asp-area="" asp-controller="GoodsAllocations" asp-action="Create">Allocate Goods</a>
+        <a class="btn btn-primary" asp-area="" asp-controller="MoneysAllocates" asp-action="Create">Purchase</a>
 
 
 
@@ -89,3 +89,11 @@
 }
     </tbody>
 </table>
+@if (User.Identity.IsAuthenticated)
+{
+    if (User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" asp-area="" asp-controller="MoneysAllocates" asp-action="Index">View All Money Allocations</a>
+
+    }
+}
